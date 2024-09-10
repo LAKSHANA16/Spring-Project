@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC 
+"-//SPRING//DTD BEAN//EN" 
+"http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="product1" class="com.hexaware.spring.Product">
+           <property name="name" value="Air conditioner"/>
+           <property name="quantity" value="2"/>
+           <property name="price" value="25000"/>
+    </bean>
+	
+	<bean id="order1" class="com.hexaware.spring.Order">
+           <property name="id" value="1"/>
+           <property name="product" ref="product1"/>
+    </bean>
+	<bean id="inventory1" class="com.hexaware.spring.Inventory">
+           <property name="quantityavail" value="25"/>
+           <property name="items">
+           <list>
+           <ref bean="order1"/>
+           </list>
+           </property>
+    </bean>
+</beans>
